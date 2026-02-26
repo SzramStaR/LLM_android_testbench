@@ -1,0 +1,26 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "benchmark-collector-worker"
+main = "src/index.ts"
+compatibility_date = "2025-01-09"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers Logs
+# Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
+# Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs
+[observability]
+enabled = true
+
+# Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
+# Docs:
+# - https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+# Note: Use secrets to store sensitive data.
+# - https://developers.cloudflare.com/workers/configuration/secrets/
+[vars]
+PROTECT_KEY = "...replace_with_your_key..."
+
+
+# Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
+# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#r2-buckets
+[[r2_buckets]]
+bucket_name = "benchmark-collector"
+binding = "DEBUG_BUCKET"

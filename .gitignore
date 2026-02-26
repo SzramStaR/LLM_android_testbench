@@ -1,0 +1,53 @@
+# --- Android / Java / Gradle ---
+# Built objects
+bin/
+gen/
+out/
+build/
+.gradle/
+**/build/
+**/intermediate/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.iws
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local configuration (crucial: contains your PC's specific paths)
+local.properties
+.DS_Store
+
+# --- Native / C++ (Common in LLM apps like MLC) ---
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.dll
+*.dylib
+
+# --- Python / LLM / Data (If you have scripts or models) ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+
+# --- Large Binary Files ---
+# If you aren't using Git LFS, ignore these heavy hitters
+*.apk
+*.aab
+*.dex
+*.jar
+*.bin
+*.pt
+*.onnx
+*.tflite
+*.gguf
+*.pte
